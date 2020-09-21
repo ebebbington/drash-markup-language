@@ -20,10 +20,17 @@
             {
                 "language": "dml",
                 "scopeName": "source.dml",
-                "path": "./syntaxes/dml.tmLanguage.json",
+                "path": "./syntaxes/dml.tmLanguage.json"
+            },
+            {
+                "path": "./syntaxes/injection.code.json",
+                "scopeName": "injection.code.dml",
+                "injectTo": [
+                  "source.dml"
+                ],
                 "embeddedLanguages": {
-                    "meta.embedded.block.html": "html",
-                    "source.html": "html"
+                  "meta.embedded.block.typescript": "typescript",
+                  "source.ts": "ts"
                 }
             }
         ]

@@ -13,24 +13,18 @@
 		"keywords": {
 			"patterns": [
 				{
-				"name": "keyword.control.dml",
-				"match": "(for)"
+					"name": "keyword.control.dml",
+					"begin": "<%",
+					"end": "%>",
+					"patterns": [
+						{
+							"include": "source.ts"
+						}
+					]
 				},
-                {
-                    "name": "comment.block",
-                    "begin": "<!--",
-                    "end": "-->"
-                }
-			]
-		},
-		"strings": {
-			"name": "string.quoted.double.dml",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
 				{
-					"name": "constant.character.escape.dml",
-					"match": "\\\\."
+					"name": "html.dml",
+					"include": "text.html.derivative"
 				}
 			]
 		}

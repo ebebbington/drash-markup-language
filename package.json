@@ -6,16 +6,31 @@
     "engines": {
         "vscode": "^1.49.0"
     },
+    "scripts": {
+        "build": "node_modules/.bin/tsc -b"
+    },
+    "main": "./client/out/extension",
     "categories": [
         "Programming Languages"
     ],
+    "activationEvents": [
+        "onLanguage:dml",
+        "onStartupFinished"
+    ],
     "contributes": {
-        "languages": [{
-            "id": "dml",
-            "aliases": ["Drash Markup Language", "dml"],
-            "extensions": [".dml"],
-            "configuration": "./language-configuration.json"
-        }],
+        "languages": [
+            {
+                "id": "dml",
+                "aliases": [
+                    "Drash Markup Language",
+                    "dml"
+                ],
+                "extensions": [
+                    ".dml"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
         "grammars": [
             {
                 "language": "dml",
@@ -26,13 +41,33 @@
                 "path": "./syntaxes/injection.code.json",
                 "scopeName": "injection.code.dml",
                 "injectTo": [
-                  "source.dml"
+                    "source.dml"
                 ],
                 "embeddedLanguages": {
-                  "meta.embedded.block.typescript": "typescript",
-                  "source.ts": "ts"
+                    "meta.embedded.block.typescript": "typescript",
+                    "source.ts": "ts"
                 }
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "DML Configuration",
+            "properties": {
+                "languageServerExample.maxNumberOfProblems": {
+                    "scope": "resource",
+                    "type": "number",
+                    "default": 100,
+                    "description": "Controls the maximum number of problems produced by the server."
+                }
+            }
+        }
+    },
+    "dependencies": {
+        "typescript": "^4.0.3",
+        "@types/mocha": "^8.0.3",
+        "mocha": "^8.1.1",
+        "@types/node": "^12.12.0",
+        "eslint": "^6.4.0",
+        "@typescript-eslint/parser": "^2.3.0"
     }
 }

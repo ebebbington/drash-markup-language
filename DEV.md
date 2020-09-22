@@ -1,6 +1,6 @@
 ## `package.json`
 
-This pretty much defines our language, and to initialise it.
+This pretty much defines our language, and initialises it.
 
 ## `syntaxes/dml.tmLanguage.json`
 
@@ -9,12 +9,12 @@ This file is what we use to style everything.
 Inside `repository.keyword.patterns`, we can define styling for certain blocks. For example that's how we define what a comment is, and how to style it. It is also how we tell the editor to use javascript for styling things like `user.name` on it's own, and to add custom styling for our `<%|%>`.
 
 Saying that, we dont need the comment block as a new objext in patterns:
-```
+```json
 {
-                    "name": "comment.block",
-                    "begin": "<!--",
-                    "end": "-->"
-				},
+  "name": "comment.block",
+  "begin": "<!--",
+  "end": "-->"
+},
 ```
 Because the html directive already takes care of it
 
@@ -26,16 +26,16 @@ To extend onto the styling, just add a new block.
 ```
 // eg repository.strings, or { repository: { strings: ... }}
 "strings": {
-			"name": "string.quoted.double.dml",
-			"begin": "\"[^<]",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.dml",
-					"match": "\\\\."
-				}
-			]
-		}
+  "name": "string.quoted.double.dml",
+  "begin": "\"[^<]",
+  "end": "\"",
+  "patterns": [
+    {
+	  "name": "constant.character.escape.dml",
+	  "match": "\\\\."
+	}
+   ]
+}
 ```
 
 ## Debugging

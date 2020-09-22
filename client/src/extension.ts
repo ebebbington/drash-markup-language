@@ -6,47 +6,37 @@ import {
   ServerOptions,
   TransportKind
 } from 'vscode-languageclient';
+import * as vscode from 'vscode';
+const fs = require('fs')
 
 let client: LanguageClient;
 
-const fs = require('fs')
-fs.writeFile('abc.test', 'hello', function () {
-
-})
-//https://code.visualstudio.com/api/references/vscode-api#WorkspaceConfiguration
-import * as vscode from 'vscode';
-const folderPath = vscode.workspace.workspaceFolders[0].uri
-  .toString()
-  .split(":")[1];
-  vscode.window.showInformationMessage('SAY WHAT WAS DONE')
-// TODO: If user has no .vscode dir, make it. If user has no settings.json, make it. else add a new json property: https://stackoverflow.com/questions/36856232/write-add-data-in-json-file-using-node-js  
-// try make .vscode for user  
-fs.mkdir(path.join(folderPath, '.vscode'), (err) => { 
-    if (err) { 
-
-    }  else {
-      vscode.window.showInformationMessage("Created the .vscode directory")
-    }
-}); 
-// Check if they have a settings.json defined (so we don't override their actual settings)
-const settingsConfig =  workspace.getConfiguration('settings', vscode.workspace.workspaceFolders[0].uri);
-console.log(settingsConfig.get("configurations"))
-settingsConfig.update("configurations", JSON.stringify({"name": "ed"}))
-
-// write to settings.json
-// fs.writeFile(path.join(folderPath, ".vscode/settings.json"), JSON.stringify({   // or config.update
-//     "files.associations": {
-//       "*.dml": "html",
+// const folderPath = vscode.workspace.workspaceFolders[0].uri.toString().split(":")[1];
+// // try make .vscode for user  
+// fs.mkdir(path.join(folderPath, '.vscode'), (err) => { 
+//     if (err) { 
+//       // .vscode already exists
+//     } else {
+//       vscode.window.showInformationMessage("Created the .vscode directory")
 //     }
-// }, null, 2), err => {
-//     if (err) {
-//         vscode.window.showInformationMessage('vscode settings.json already exists')
-//       // todo show error
+//     try {
+//       if (fs.existsSync(path.join(folderPath, ".vscode/settings.json"))) {
+//         // settings do exist
+//         const settingsConfig =  workspace.getConfiguration('settings', vscode.workspace.workspaceFolders[0].uri);
+//         settingsConfig.update("a", 'hello', vscode.ConfigurationTarget.Workspace) // todo doesnt work
+//         vscode.window.showInformationMessage('Updated your settings')
+//       } else {
+//         // settings don't exist
+//         fs.writeFile(path.join(folderPath, ".vscode/settings.json"), JSON.stringify({
+//           "files.associations": {
+//             "*.dml": "html"
+//           }
+//         }, null, 2))
+//       }
+//     } catch(err) {
+//       // some error
 //     }
-//     console.log('make settings')
-//     // todo show info message
-//   });
-settingsConfig.update('hello', 'buhbye') 
+// });
 
 export function activate(context: ExtensionContext) {
 

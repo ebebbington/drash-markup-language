@@ -1,6 +1,6 @@
-# dml README
+# Drash Markup Language
 
-This is the README for your extension "dml". After writing up a brief description, we recommend including the following sections.
+Description
 
 ## Features
 
@@ -46,6 +46,11 @@ Fixed issue #.
 ### 1.1.0
 
 Added features X, Y, and Z.
+
+## Acknowledgments
+
+* [@SRNV](https://github.com/SRNV) - Rudy helped a lot on the Language Support side, answering any queries, helping solve problems found, and just getting it up andd running. Huge thanks.
+* [@crooske](https://github.com/crookse) - Eric had the idea of creating a template engine, and to create full support for using it, such as turning it into a new language, and creating the idea of IDE extensions/plugins.
 
 -----------------------------------------------------------------------------------------------------------
 

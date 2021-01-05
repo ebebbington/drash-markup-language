@@ -19,6 +19,12 @@
   <a href="https://rb.gy/vxmeed">
     <img src="https://img.shields.io/badge/Tutorials-YouTube-red">
   </a>
+  <a href="https://github.com/ebebbington/drash-markup-language/actions">
+    <img src="https://img.shields.io/github/workflow/status/ebebbington/drash-markup-language/CodeQL?label=CodeQL">
+  </a>
+  <a href="https://sonarcloud.io/dashboard?id=ebebbington_drash-markup-language">
+    <img src="https://sonarcloud.io/api/project_badges/measure?project=ebebbington_drash-markup-language&metric=alert_status">
+  </a>
 </p>
 
 ---

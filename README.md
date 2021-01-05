@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/github/release/ebebbington/drash-markup-language.svg?color=bright_green&label=latest">
   </a>
   <a href="https://github.com/ebebbington/drash-markup-language/actions">
-    <img src="https://img.shields.io/github/workflow/status/drashland/deno-drash/master?label=ci">
+    <img src="https://img.shields.io/github/workflow/status/ebebbington/drash-markup-language/master?label=ci">
   </a>
   <a href="https://discord.gg/SgejNXq">
     <img src="https://img.shields.io/badge/chat-on%20discord-blue">
